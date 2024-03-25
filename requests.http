@@ -1,0 +1,35 @@
+### Register a new user
+POST http://localhost:5001/register
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "age": 28,
+  "gender": "female",
+  "email": "janedoee@example.com",
+  "username": "janedoe",
+  "password": "Secure_Password123"
+}
+
+### Log in as the user
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+  "username": "janedoee",
+  "password": "Secure_Password123"
+}
+
+### Manipulate
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+  "username": "' OR true--",
+  "password": "adsfasdf"
+}
+
+### Request to a protected route
+GET http://localhost:5001/validate-token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWZjYjA5ODhlMmY2Y2Y3ZTU1YjRkZmYiLCJpYXQiOjE3MTEwNjYzODAsImV4cCI6MTcxMTA2OTk4MH0.8Spbov1GATcteB8qRdHwWuG8o8H6LKny1gnp-Sk0wKo
